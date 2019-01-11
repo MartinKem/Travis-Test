@@ -121,7 +121,7 @@ class node{
 			}
 		}
 		// all child-nodes must be displayed right now
-		for(var i = 0; i < this.children.length; i++){
+		for(i = 0; i < this.children.length; i++){
 			if(this.children[i][1] == index){
 				this.children[i][0].showNode();
 				var parentID = this.nodeID + '#' + this.children[i][1];
