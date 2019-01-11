@@ -156,7 +156,7 @@ class node{
 		var positions = addNodeToForceTree(this.nodeID, idArray);	// this function from the ForceTree.js file axtends for each node in
 																	// the idArray the invisible force graph and returns their positions
 		
-		for(var i = 0; i < childArray.length; i++){		// in the end the affected child-nodes are placed at the calculated positions
+		for(i = 0; i < childArray.length; i++){		// in the end the affected child-nodes are placed at the calculated positions
 			childArray[i][0].setPosition(positions[i].x, positions[i].y);
 		}
 	}
@@ -188,7 +188,7 @@ class node{
 			this.visible = false;
 			this.visibleParentNodes = 0;	// visibleParentNodes is set to 0 because there is no node anymore with an edge to this node
 			
-			for(var i = 0; i < this.children.length; i++){
+			for(i = 0; i < this.children.length; i++){
 				if(this.children[i][0].getVisibility()) this.children[i][0].hideNode();
 				
 				// this is too complicated to realise, if there exist cycles
@@ -333,7 +333,7 @@ function createSingleNode(nodeID, cont, x, y, name, content, declaredTargets){
 			.style("width", "300px")
 			//.style("max-height", "500px")
 			.style("padding", "20px")
-			.style("border-width", "5px")	// sizes must stay in js-file for later calculations
+			.style("border-width", "5px");	// sizes must stay in js-file for later calculations
 			//.style("overflow", "auto")
 						
 	node.append("xhtml:h3")
@@ -358,10 +358,12 @@ function createSingleNode(nodeID, cont, x, y, name, content, declaredTargets){
 			.style("border-width", "2px")
 			.style("border-top-width", (i == 0 ? "2px" : "0px"))
 			.style("border-radius", "5px")
-			.style("padding", "5px")
+			.style("padding", "5px");
+			
 		entry.append("xhtaml:div")
 			.text(i + ": " + content[i])
 			.style("float", "left");
+			
 		entry.append("xhtaml:div")
 			.text("(" + declaredTargets[i] + ")")
 			.style("float", "right")
